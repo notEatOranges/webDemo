@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let total = 30;
+      let msg = passthru`The total is ${total} (${total * 1.05} with tax)`;
+
+      // function passthru(literals) {
+      //   let result = '';
+      //   let i = 0;
+      //   while (i < literals.length) {
+      //     result += literals[i++];
+      //     if (i < arguments.length) {
+      //       result += arguments[i];
+      //     }
+      //   }
+      //   return result;
+      // }
+
+      function passthru(literals, ...values) {
+        let output = '';
+        let index;
+        console.log(values);
+        for (index = 0; index < values.length; index++) {
+          output += literals[index] + values[index];
+        }
+
+        output += literals[index];
+        return output;
+      }
+      console.log(msg); // 结果是: The total is 30 (31.5 with tax)
+    </script>
+  </body>
+</html>

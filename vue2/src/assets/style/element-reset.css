@@ -1,0 +1,4 @@
+/* 修改element原有的样式 */
+.el-popover {
+  min-width: 50px;
+}

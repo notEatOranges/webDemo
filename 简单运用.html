@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不吃橘子</title>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+  <script>
+    let a = [
+      { id: '1' },
+      { id: '4' },
+      { id: '12' },
+      { id: '21' },
+      { id: '22' },
+      { id: '2' },
+    ];
+    let b = ['1', '2', '3', '4', '5', '6', '7', '20', '11'];
+    // 找出数组a中id在数组b中也包含的元素的下标
+    let c = a.filter((item, index) => (b.includes(item.id) ? item : null));
+
+    let d = a.reduce((pre, cur, index) => {
+      b.includes(cur.id) ? pre.push(index) : pre;
+      return pre;
+    }, []);
+    console.log(c);
+    console.log(cc);
+    console.log(d);
+  </script>
+</html>

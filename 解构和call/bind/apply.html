@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let { toString: s } = Number;
+      let n = 345;
+      let { log } = console;
+      function fn() {
+        let { log } = console;
+        log(this.n);
+      }
+      let obj2 = {
+        n: 90,
+      };
+      let obj = {
+        // n: 456,
+        fn: fn,
+      };
+      // (() => {
+      //   console.log(toString.call(n));
+      //   console.log(n.toString());
+      // })();
+      obj.fn.call(obj2);
+      let b = [
+        [1, 2],
+        [3, 4],
+      ].map(([a, b]) => a + b);
+      log(b);
+      let x;
+      ({ x } = { x: 8888 });
+      log(x);
+    </script>
+  </body>
+</html>
