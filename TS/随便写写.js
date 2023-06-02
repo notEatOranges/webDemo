@@ -30,3 +30,6 @@ async function  fn (){
 }
 
 fn()
+
+// 数组去重
+

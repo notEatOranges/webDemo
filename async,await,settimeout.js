@@ -2,7 +2,7 @@
  * @Description:
  * @Date: 2023-03-22 11:19:18
  * @LastEditors: huangly
- * @LastEditTime: 2023-06-02 23:27:56
+ * @LastEditTime: 2023-06-02 23:44:29
  * @FilePath: /vue-demo/async,await,settimeout.js
  */
 
@@ -37,3 +37,4 @@ function setTime2() {
     console.log("定时器里: ==>");
   }, 3000);
 }
+
