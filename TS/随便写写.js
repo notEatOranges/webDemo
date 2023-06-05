@@ -2,8 +2,8 @@
  * @Author: hly
  * @Description: 
  * @Date: 2022-10-26 15:32:43
- * @LastEditTime: 2022-11-21 18:31:24
- * @FilePath: /Vue-demo/TS/随便写写.js
+ * @LastEditTime: 2023-06-05 10:16:21
+ * @FilePath: /vue-demo/TS/随便写写.js
  */
 
 
@@ -31,6 +31,27 @@ async function  fn (){
 
 fn()
 
-// 数组去重
+
+// call() 改变this的女指向，如果不使用这个方法，手写一个实现相同的效果
+
+// 改变 this 指向、深入理解 call/apply/bind 的原理
+
+// 1. call
+Function.prototype.myCall = function(context, ...args) {
+  context.func = this
+  // 执行函数，利用扩展运算符将数组展开
+  context.func(...args)
+  delete context.func
+}
+
+var me = {
+name: 'icon'
+}
+
+function showFullName(surName) {
+console.log(`${this.name} ${surName}`)
+}
+
+showFullName.myCall(me, 'lee') // icon lee
 
 
